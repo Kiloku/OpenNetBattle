@@ -36,6 +36,7 @@
 #include "bnOverworldMenuSystem.h"
 #include "bnXML.h"
 #include "bnMinimap.h"
+#include "../bnNaviDesignerScene.h"
 
 class Background; // forward decl
 
@@ -238,6 +239,7 @@ namespace Overworld {
     void GotoPVP();
     void GotoMail();
     void GotoKeyItems();
+    void GotoNaviDesigner();
 
     //
     // Getters

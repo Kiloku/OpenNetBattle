@@ -32,6 +32,7 @@
 #include "../bnMedicalBackground.h"
 #include "../bnJudgeTreeBackground.h"
 #include "../bnMiscBackground.h"
+#include "../bnNaviDesignerScene.h"
 #include "../bnRobotBackground.h"
 #include "../bnSecretBackground.h"
 #include "../bnUndernetBackground.h"
@@ -56,7 +57,8 @@ namespace {
       { "key_items",   std::bind(&Overworld::SceneBase::GotoKeyItems, scene) },
       { "mob_select",  std::bind(&Overworld::SceneBase::GotoMobSelect, scene) },
       { "config",      std::bind(&Overworld::SceneBase::GotoConfig, scene) },
-      { "sync",        std::bind(&Overworld::SceneBase::GotoPVP, scene) }
+      { "sync",        std::bind(&Overworld::SceneBase::GotoPVP, scene) },
+      { "testmenu",    std::bind(&Overworld::SceneBase::GotoNaviDesigner, scene)  }
     };
   };
 }
@@ -902,6 +904,17 @@ void Overworld::SceneBase::GotoKeyItems()
   using effect = segue<BlackWashFade, milliseconds<500>>;
 
   getController().push<effect::to<KeyItemScene>>(items);
+}
+
+void Overworld::SceneBase::GotoNaviDesigner()
+{
+  // Config Select on PC
+  gotoNextScene = true;
+  Audio().Play(AudioType::CHIP_DESC);
+
+  using effect = segue<BlackWashFade, milliseconds<500>>;
+
+  getController().push<effect::to<NaviDesignerScene>>();
 }
 
 Overworld::PersonalMenu& Overworld::SceneBase::GetPersonalMenu()

@@ -304,6 +304,18 @@ TextureResourceManager::TextureResourceManager() {
   // config ui
   paths.push_back("resources/scenes/config/audio.png");
   paths.push_back("resources/scenes/config/end_btn.png");
+
+  //navi designer
+  paths.push_back("resources/scenes/designer/base.png");
+  
+  paths.push_back("resources/scenes/designer/helmet.png");
+  paths.push_back("resources/scenes/designer/helmet_with_mask.png");
+  paths.push_back("resources/scenes/designer/helmet_with_visor.png");
+  paths.push_back("resources/scenes/designer/helmet_with_visor_and_mask.png");
+
+  paths.push_back("resources/scenes/designer/plate.png");
+  paths.push_back("resources/scenes/designer/shoulderpads.png");
+  paths.push_back("resources/scenes/designer/plate_and_shoulderpads.png");
 }
 
 TextureResourceManager::~TextureResourceManager() {
